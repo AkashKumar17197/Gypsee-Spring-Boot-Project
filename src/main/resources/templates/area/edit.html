@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Area</title>
+</head>
+<body>
+    <h2>Edit Area</h2>
+    <form th:action="@{'/areas/edit/' + ${area.area_id}}" th:object="${area}" method="post">
+        <label>Area Name: <input type="text" maxlength="30" size="30" th:field="*{area_name}" /></label><br/>
+        <label>Area Population: <input type="number" min="1" max="9999999" th:field="*{area_population}" /></label><br/>
+        <input type="submit" value="Save" />
+    </form>
+    <a th:href="@{/areas}">Back to Area List</a>
+</body>
+</html>
